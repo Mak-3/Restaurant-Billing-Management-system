@@ -1,5 +1,5 @@
 # Project Name
-WOW RESTAURANT
+WOW KITCHEN
 
 # Description
 I developed a web application that seamlessly generates bills according to the food ordered by customers, while also keeping the restaurant's menu up to date. Additionally, the system sends personalized SMS notifications to customers, inviting them to rate their experience and stores their previous orders for future reference.
