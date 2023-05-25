@@ -307,7 +307,8 @@ const style = document.createElement('style');
 function sendsms(orderId){
 var phnototext = document.getElementById('phno').value;
 var msgtosend ="Thanks for Dining with us Hope you enjoyed your meal! Kindly help us to improve by rating your experience below."+"http://localhost:9021/RestuarantBilling/mydetails"+" your Order Id is "+orderId;
-var smsurl ="https://www.fast2sms.com/dev/bulkV2?authorization=0XwvUkOC8Szl3b5YaPsderMRKjB7pJ2AutD91gT6EcF4WVLnoGORFv7ku3mNQWK2zhV480SBg5LdlXD9&message="+msgtosend+"&language=english&route=q&numbers="+phnototext;
+var authorizationkey = "Your twilio key"
+var smsurl ="https://www.fast2sms.com/dev/bulkV2?authorization=${authorizationkey}&message="+msgtosend+"&language=english&route=q&numbers="+phnototext;
 var settings = {
     "async": true,
     "crossDomain": true,
