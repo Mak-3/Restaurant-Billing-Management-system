@@ -1,0 +1,31 @@
+.gradient-custom-2 {
+    background: #fccb90;
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    }
+
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }
+    .wow {
+        text-transform: uppercase;
+        background: linear-gradient(to right, #D4145A 0%, #FBB03B 100%);
+        -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+        font-family: "Poppins", sans-serif;
+        margin-right: 10px;
+      }
+      .w900 {
+        font-weight: 900 !important;
+   }
+body{
+    height: 100vh;
+}

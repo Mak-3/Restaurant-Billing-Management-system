@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Rating</title>
+    <link rel="stylesheet" href="resources/css/style8.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/> -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+<section class="h-100 gradient-form mx-auto">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="title w-25 mt-3">
+                <span class="wow">WOW</span>  <br> KITCHEN
+            </div>
+            <div class="custname mt-5 mx-auto text-center">
+                <p><b>Welcome <span id="custname"></span></b></p>
+            </div>
+            <div class="question mt-2 mx-auto text-center">
+                <p>How was your food?</p>
+                <div class="overallrating">
+                    <button class="star">&#9734;</button>
+                    <button class="star">&#9734;</button>
+                    <button class="star">&#9734;</button>
+                    <button class="star">&#9734;</button>
+                    <button class="star">&#9734;</button>
+                    <p><span class="current-rating">0 </span> of 5</p>
+                </div>
+                <div>
+                    <p>Leave your comments here</p>
+                    <textarea rows="2.5" cols="34" class="comments">
+
+                </textarea>
+                    <div class="text mt-4">
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 mt-2" type="button" onclick="submitrating()">Submit</button>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="resources/js/script8.js"></script>
+<script>
+    setTimeout(function() { loadrange(); }, 1000);
+    function loadrange(){
+    const allRanges = document.querySelectorAll(".range-wrap");
+    allRanges.forEach((wrap) => {
+      const range = wrap.querySelector(".range");
+      const bubble = wrap.querySelector(".bubble");
+
+      range.addEventListener("input", () => {
+        setBubble(range, bubble);
+      });
+      setBubble(range, bubble);
+    });
+
+    function setBubble(range, bubble) {
+      const val = range.value;
+
+      const min = range.min || 0;
+      const max =  range.max || 100;
+
+      const offset = Number(((val - min) * 100) / (max - min));
+
+      bubble.textContent = val;
+
+      // yes, 14px is a magic number
+      bubble.style.left = `calc(${offset}% - 14px)`;
+    }
+}
+      </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

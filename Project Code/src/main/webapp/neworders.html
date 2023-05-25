@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="resources/css/style3.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/> -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <nav class="mx-5 px-1">
+    <a href="home" id="logo"><h2><span class="wow w900">wow</span>Kitchen</h2></a>
+    <i class="fas fa-bars" id="ham-menu"></i>
+    <ul id="nav-bar" class="mt-3">
+      <li class="active">
+        <a href="#home" class="text-white">New Orders</a>
+      </li>
+      <li>
+        <a href="history">History</a>
+      </li>
+      <li>
+        <a href="analytics">Analytics</a>
+      </li>
+      <li>
+        <a href="settings">Settings</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div class="container pt-2">
+  <div class="row align-content-end mt-5 ">
+    <div class="col-md-6 menu mt-4 menu-display">
+      <div class="row justify-content-between">
+        <div class="col-md-4">
+          <div class="dropdown">
+            <select class="form-select" aria-label="Default select example" id="batchSelect" onchange="filter()">
+              <option selected value="0">All Categories</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-6 mx-2">
+          <div class="input-group rounded">
+            <input type="search" class="form-control rounded" id="searchbox" placeholder="Search by dish name" aria-label="Search" aria-describedby="search-addon" oninput="searchdish()" />
+            <span class="input-group-text border-0" id="search-addon">
+                  <i class="fa fa-search"></i>
+                </span>
+          </div>
+        </div>
+      </div>
+      <div class="flex-wrap">
+        <div class="row max" id="dishes">
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mt-3 summary">
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">
+          <h3 class="panel-title"><strong>Order summary</strong></h3>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive customer">
+            <div class="mt-2 row w-100">
+              <div class="mt-2 mb-2 col">
+                <div class="input-field">
+                  <input class="form-control" id="cname" required type="text">
+                  <label for="cname">Customer Name</label>
+                </div>
+              </div>
+              <div class="mt-2 mb-2 col">
+                <div class="input-field">
+                  <input class="form-control w-100" id="phno" required type="number">
+                  <label for="phno">Phone Number</label>
+                </div>
+              </div>
+            </div>
+            <table class="table" id="cartitems">
+              <thead>
+              <tr>
+                <th>Item</th>
+                <th class="text-center">Price</th>
+                <th class="text-center">Quantity</th>
+                <th class="text-right">Totals</th>
+                <th class="text-right">Delete</th>
+              </tr>
+              </thead>
+              <tbody id="orders">
+
+              </tbody>
+            </table>
+            <table>
+              <tbody id="totalDisplay">
+              <tr style="border-top:2px solid black; border-bottom: none;" class="top-0">
+                <td class="alignright" width="100%"><b>Total: </b></td>
+                <td id="totalAmount">0</td>
+              </tr>
+              </tbody>
+            </table>
+            <div class="invoiceDiv text-center" id="invoicediv">
+              <button class="btn invoiceBtn mt-3 mb-3 btn-primary" id="invoicebtn">
+                Generate Invoice
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="resources/js/script3.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
