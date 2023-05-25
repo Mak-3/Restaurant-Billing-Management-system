@@ -1,0 +1,244 @@
+.wow {
+	text-transform: uppercase;
+	background: linear-gradient(to right, #D4145A 0%, #FBB03B 100%);
+	-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+	font-family: "Poppins", sans-serif;
+	margin-right: 10px;
+  }
+@keyframes scaleInfinite {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+  header {
+	position: fixed;
+	width: 100%;
+	padding: 1rem 2rem;
+	z-index: 100;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  header h2{
+	color: whitesmoke;
+  }
+  nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+  nav ul {
+	list-style: none;
+	display: flex;
+	gap: 2rem;
+  }
+  nav a {
+	font-size: 1.8rem;
+	text-decoration: none;
+  }
+  nav a#logo {
+	color: #000000;
+	font-weight: 700;
+  }
+  nav ul a {
+	font-size: 18px;
+	color: #e1e1e1;
+	font-family: inherit;
+	background: linear-gradient(to right, #D4145A 0%, #FBB03B 100%);
+	font-weight: 800;
+	cursor: pointer;
+	position: relative;
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition-duration: 400ms;
+	transition-property: color;
+  }
+  nav ul a:hover {
+	color: #fff;
+  }
+
+  nav ul a:focus:after,
+nav ul a:hover:after {
+  width: 100%;
+  left: 0%;
+}
+nav ul a:after {
+	content: "";
+	pointer-events: none;
+	bottom: -2px;
+	left: 50%;
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	background: linear-gradient(to right, #D4145A 0%, #FBB03B 100%);
+	transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition-duration: 400ms;
+	transition-property: width, left;
+  }
+  section#home {
+	height: 100vh;
+	display: grid;
+	place-items: center;
+  }
+  h1 {
+	font-size: 4rem;
+  }
+  #ham-menu {
+	display: none;
+  }
+  nav ul.active {
+	left: 0;
+  }
+  @media only screen and (max-width: 991px) {
+	html {
+	  font-size: 56.25%;
+	}
+	header {
+	  padding: 2.2rem 5rem;
+	}
+  }
+  @media only screen and (max-width: 767px) {
+	html {
+	  font-size: 50%;
+	}
+	#ham-menu {
+	  display: block;
+	  color: #ffffff;
+	}
+	.home{
+		width: 100%;
+		height: 100%;
+	}
+	.home img{
+		width: 100vw;
+		height: 100vh;
+		background-size:cover;
+		position: fixed;
+	}
+	nav a#logo,
+	#ham-menu {
+	  font-size: 3.2rem;
+	}
+	nav ul {
+	  background-color: black;
+	  position: fixed;
+	  left: -100vw;
+	  top: 73.6px;
+	  width: 100vw;
+	  height: calc(100vh - 73.6px);
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: space-around;
+	  transition: 1s;
+	  gap: 0;
+	}
+	
+	.text-box{
+		height: 10% !important;
+	}
+  }
+  @media only screen and (max-width: 575px) {
+	html {
+	  font-size: 46.87%;
+	}
+	header {
+	  padding: 2rem 3rem;
+	}
+	nav ul {
+	  top: 65.18px;
+	  height: calc(100vh - 65.18px);
+	}
+  }
+@keyframes scaleInfinite {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@import "./node_modules/bootstrap/scss/bootstrap";
+ html, body, section, .carousel, .carousel-inner, .carousel-item {
+	 height: 100%;
+}
+ .carousel-inner .carousel-item > img {
+	 width: 100%;
+	 height: 100%;
+	 object-fit: cover;
+	 animation: zoomin 10s linear infinite;
+}
+ @keyframes zoomin {
+	 0% {
+		 transform: scale(1);
+	}
+	 50% {
+		 transform: scale(1.05);
+	}
+	 100% {
+		 transform: scale(1);
+	}
+}
+ .carousel-indicators button {
+	 border-radius: 50%;
+	 width: 10px !important;
+	 height: 10px !important;
+}
+ .carousel-indicators button.active {
+	 background-color: #d8b700 !important;
+}
+ .carousel-caption {
+	 top: 50%;
+	 transform: translateY(-50%);
+	 bottom: inherit;
+}
+ .w100 {
+	 font-weight: 100 !important;
+}
+ .w300 {
+	 font-weight: 300 !important;
+}
+ .w400 {
+	 font-weight: 400 !important;
+}
+ .w500 {
+	 font-weight: 500 !important;
+}
+ .w700 {
+	 font-weight: 700 !important;
+}
+ .w900 {
+	 font-weight: 900 !important;
+}
+.text-box{
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+	animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+  }
